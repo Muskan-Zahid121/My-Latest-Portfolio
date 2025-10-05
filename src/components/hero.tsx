@@ -109,7 +109,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
               <motion.h1
-                className="text-2xl font-bold text-gradient-blue"
+                className="text-2xl font-extrabold bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.25)] tracking-wide"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
@@ -1255,7 +1255,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.25)]">
                 MUSKAN ZAHID
               </h3>
               <p className="text-gray-400">Full Stack AI Engineer</p>
@@ -1282,6 +1282,37 @@ export default function Home() {
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
+              </a>
+            </div>
+
+            {/* Footer quick links */}
+            <div className="mt-6 md:mt-0 flex items-center gap-4 text-sm text-gray-400">
+              <a
+                href="#about"
+                className="hover:text-blue-400 transition-colors"
+              >
+                About
+              </a>
+              <span className="opacity-30">•</span>
+              <a
+                href="#skills"
+                className="hover:text-blue-400 transition-colors"
+              >
+                Skills
+              </a>
+              <span className="opacity-30">•</span>
+              <a
+                href="#experience"
+                className="hover:text-blue-400 transition-colors"
+              >
+                Experience
+              </a>
+              <span className="opacity-30">•</span>
+              <a
+                href="#projects"
+                className="hover:text-blue-400 transition-colors"
+              >
+                Projects
               </a>
             </div>
           </div>
