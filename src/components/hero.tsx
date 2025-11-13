@@ -89,7 +89,7 @@ export default function Home() {
 
   return (
     <motion.div
-      className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 via-indigo-950 to-slate-950 text-white overflow-x-hidden relative"
+      className="min-h-screen bg-gradient-to-br from-[#06060f] via-[#0b0f1c] to-[#06070d] text-white overflow-x-hidden relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -100,7 +100,7 @@ export default function Home() {
       </div>
       {/* Navigation */}
       <motion.nav
-        className="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-blue-500/30"
+        className="fixed top-0 w-full z-50 bg-slate-950/95 backdrop-blur-md border-b border-purple-400/30"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
               <motion.h1
-                className="text-2xl font-extrabold bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.25)] tracking-wide"
+                className="text-2xl font-extrabold bg-gradient-to-r from-fuchsia-300 via-purple-200 to-pink-300 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(192,132,252,0.25)] tracking-wide"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
@@ -123,9 +123,9 @@ export default function Home() {
                 <motion.button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-all duration-300 hover:text-blue-400 ${
+                  className={`capitalize transition-all duration-300 hover:text-purple-300 ${
                     activeSection === section
-                      ? "text-blue-400"
+                      ? "text-purple-300"
                       : "text-gray-300"
                   }`}
                   whileHover={{ scale: 1.1 }}
@@ -145,11 +145,6 @@ export default function Home() {
                   label: "GitHub",
                 },
                 {
-                  href: "mailto:muskanzahid.pk@gmail.com",
-                  icon: Mail,
-                  label: "Email",
-                },
-                {
                   href: "https://linkedin.com/in/muskanzahid",
                   icon: Linkedin,
                   label: "LinkedIn",
@@ -160,7 +155,7 @@ export default function Home() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-blue-500/20 hover:bg-blue-500/30 transition-all duration-300"
+                  className="p-2 rounded-full bg-purple-500/15 hover:bg-purple-500/25 transition-all duration-300"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: -20 }}
@@ -176,14 +171,14 @@ export default function Home() {
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-full bg-blue-500/20 hover:bg-blue-500/30 transition-all duration-300"
+                className="p-2 rounded-full bg-purple-500/15 hover:bg-purple-500/25 transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-blue-400" />
+                  <X className="w-6 h-6 text-purple-300" />
                 ) : (
-                  <Menu className="w-6 h-6 text-blue-400" />
+                  <Menu className="w-6 h-6 text-purple-300" />
                 )}
               </motion.button>
             </div>
@@ -197,7 +192,7 @@ export default function Home() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden border-t border-blue-500/20 mt-4"
+                className="md:hidden border-t border-purple-500/20 mt-4"
               >
                 <div className="py-4 space-y-4">
                   {/* Mobile Navigation Links */}
@@ -213,9 +208,9 @@ export default function Home() {
                               scrollToSection(section);
                             }, 150);
                           }}
-                          className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-blue-500/10 ${
+                          className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-purple-500/10 ${
                             activeSection === section
-                              ? "text-blue-400 bg-blue-500/10"
+                              ? "text-purple-300 bg-purple-500/10"
                               : "text-gray-300"
                           }`}
                           whileHover={{ x: 10 }}
@@ -228,7 +223,7 @@ export default function Home() {
                   </div>
 
                   {/* Mobile Social Links */}
-                  <div className="flex justify-center space-x-4 pt-4 border-t border-blue-500/20">
+                  <div className="flex justify-center space-x-4 pt-4 border-t border-purple-500/20">
                     {[
                       {
                         href: "https://github.com/muskanzahid",
@@ -251,7 +246,7 @@ export default function Home() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-blue-500/20 hover:bg-blue-500/30 transition-all duration-300"
+                        className="p-3 rounded-full bg-purple-500/15 hover:bg-purple-500/25 transition-all duration-300"
                         whileHover={{ scale: 1.2, rotate: 5 }}
                         whileTap={{ scale: 0.9 }}
                         initial={{ opacity: 0, y: 20 }}
@@ -294,7 +289,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-200 text-sm font-medium mb-8"
               >
                                   <div className="w-2 h-2 bg-green-700 rounded-full mr-2 animate-pulse"></div>
                 Available for new opportunities
@@ -306,12 +301,12 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                <motion.span className="bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.25)]">
+                <motion.span className="bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(192,132,252,0.25)]">
                   FULL STACK
                 </motion.span>
                 <br />
                 <motion.span
-                  className="bg-gradient-to-r from-sky-300 via-sky-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(56,189,248,0.25)]"
+                  className="bg-gradient-to-r from-fuchsia-300 via-pink-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(236,72,153,0.25)]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -345,21 +340,21 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 1.1 }}
               >
                 <div className="flex items-start gap-3">
-                  <Rocket className="w-4 h-4 text-blue-400 mt-0.5" />
+                  <Rocket className="w-4 h-4 text-purple-300 mt-0.5" />
                   <span>
                     Ship production-ready features end-to-end — frontend to AI
                     backend
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <TrendingUp className="w-4 h-4 text-indigo-400 mt-0.5" />
+                  <TrendingUp className="w-4 h-4 text-pink-300 mt-0.5" />
                   <span>
                     Performance-focused: accessible, responsive, and optimized
                     experiences
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Award className="w-4 h-4 text-cyan-400 mt-0.5" />
+                  <Award className="w-4 h-4 text-fuchsia-300 mt-0.5" />
                   <span>
                     Specialized in RAG, LangChain, vector DBs, and robust API
                     design
@@ -379,7 +374,7 @@ export default function Home() {
                   <Button
                     onClick={() => scrollToSection("projects")}
                     size="lg"
-                    className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
+                    className="group bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
                   >
                     <span>Explore My Work</span>
                     <FolderOpen className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
@@ -393,7 +388,7 @@ export default function Home() {
                     onClick={() => scrollToSection("experience")}
                     variant="outline"
                     size="lg"
-                    className="border-2 border-purple-500/50 hover:border-purple-500 text-purple-400 hover:text-purple-300 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-purple-500/10"
+                    className="border-2 border-purple-500/50 hover:border-purple-500 text-purple-200 hover:text-purple-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 bg-transparent hover:bg-purple-500/10"
                   >
                     <span>View Experience</span>
                     <Award className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -424,8 +419,8 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
                     whileHover={{ scale: 1.05, borderColor: "#3b82f6" }}
                   >
-                    <stat.icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-blue-400">
+                    <stat.icon className="w-8 h-8 text-purple-300 mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-purple-200">
                       {stat.number}
                     </div>
                     <div className="text-sm text-gray-400">{stat.label}</div>
@@ -438,17 +433,17 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
               >
-                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-blue-500/50 transition-colors">
+                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-purple-500/40 transition-colors">
                   <div className="flex items-center gap-3">
-                    <Brain className="w-5 h-5 text-blue-400" />
+                    <Brain className="w-5 h-5 text-purple-300" />
                     <p className="text-sm text-gray-300">
                       LLM apps with RAG, embeddings, and tool-augmented agents
                     </p>
                   </div>
                 </div>
-                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-blue-500/50 transition-colors">
+                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-purple-500/40 transition-colors">
                   <div className="flex items-center gap-3">
-                    <Database className="w-5 h-5 text-indigo-400" />
+                    <Database className="w-5 h-5 text-pink-300" />
                     <p className="text-sm text-gray-300">
                       Production-grade APIs with PostgreSQL and caching
                     </p>
@@ -484,7 +479,7 @@ export default function Home() {
                   ].map((skill, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+                      className="px-3 py-1 bg-purple-500/15 text-purple-200 rounded-full text-sm border border-purple-500/30"
                     >
                       {skill}
                     </span>
@@ -499,7 +494,7 @@ export default function Home() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown className="w-6 h-6 text-blue-400" />
+          <ChevronDown className="w-6 h-6 text-purple-400" />
         </motion.div> */}
       </section>
 
@@ -521,7 +516,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-gradient-blue">
+              <span className="bg-gradient-to-r from-purple-300 via-fuchsia-300 to-pink-300 bg-clip-text text-transparent">
                 The Architect of Digital Intelligence
               </span>
             </motion.h2>
@@ -548,9 +543,9 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-900/40 border-blue-500/20 h-full backdrop-blur-md">
+              <Card className="bg-slate-900/40 border-purple-500/20 h-full backdrop-blur-md">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-blue-400 flex items-center">
+                  <CardTitle className="text-2xl font-bold text-purple-300 flex items-center">
                     <Award className="w-6 h-6 mr-2" />
                     Education
                   </CardTitle>
@@ -560,7 +555,7 @@ export default function Home() {
                     <h4 className="text-lg font-semibold text-white">
                       Bahauddin Zakariya University
                     </h4>
-                    <p className="text-blue-400 font-medium">
+                    <p className="text-purple-300 font-medium">
                       Associate Degree of Science
                     </p>
                     <p className="text-gray-400">August 2021 - February 2023</p>
@@ -581,9 +576,9 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-900/40 border-indigo-500/20 h-full backdrop-blur-md">
+              <Card className="bg-slate-900/40 border-fuchsia-500/20 h-full backdrop-blur-md">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-indigo-400 flex items-center">
+                  <CardTitle className="text-2xl font-bold text-fuchsia-300 flex items-center">
                     <Rocket className="w-6 h-6 mr-2" />
                     Mission
                   </CardTitle>
@@ -591,21 +586,21 @@ export default function Home() {
                 <CardContent>
                   <ul className="space-y-3 text-gray-300">
                     <li className="flex items-start space-x-3">
-                      <Star className="w-5 h-5 text-indigo-400 mt-1 flex-shrink-0" />
+                      <Star className="w-5 h-5 text-fuchsia-300 mt-1 flex-shrink-0" />
                       <span>
                         Creating scalable, high-performance applications that
                         push technological boundaries
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Star className="w-5 h-5 text-indigo-400 mt-1 flex-shrink-0" />
+                      <Star className="w-5 h-5 text-fuchsia-300 mt-1 flex-shrink-0" />
                       <span>
                         Enhancing user experience through intelligent AI-driven
                         solutions
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Star className="w-5 h-5 text-indigo-400 mt-1 flex-shrink-0" />
+                      <Star className="w-5 h-5 text-fuchsia-300 mt-1 flex-shrink-0" />
                       <span>
                         Driving business efficiency with data-driven
                         problem-solving approaches
@@ -624,7 +619,7 @@ export default function Home() {
             >
               <Card className="bg-slate-900/40 border-purple-500/20 h-full backdrop-blur-md">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-purple-400 flex items-center">
+                  <CardTitle className="text-2xl font-bold text-purple-300 flex items-center">
                     <TrendingUp className="w-6 h-6 mr-2" />
                     Vision
                   </CardTitle>
@@ -632,19 +627,19 @@ export default function Home() {
                 <CardContent>
                   <ul className="space-y-3 text-gray-300">
                     <li className="flex items-start space-x-3">
-                      <Star className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                      <Star className="w-5 h-5 text-purple-300 mt-1 flex-shrink-0" />
                       <span>
                         Pioneering the future of AI-integrated web applications
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Star className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                      <Star className="w-5 h-5 text-purple-300 mt-1 flex-shrink-0" />
                       <span>
                         Building intelligent systems that adapt and learn
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Star className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                      <Star className="w-5 h-5 text-purple-300 mt-1 flex-shrink-0" />
                       <span>
                         Empowering businesses through cutting-edge technology
                         solutions
@@ -670,7 +665,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
                 Technical Arsenal
               </span>
             </h2>
@@ -691,6 +686,10 @@ export default function Home() {
                   "Tailwind CSS",
                   "Material UI",
                   "Shadcn/ui",
+                  "Next.js",
+                  "React Router",
+                  "Axios / Fetch API",
+                  "Framer Motion"
                 ],
                 description:
                   "Building responsive, accessible user interfaces with modern frameworks and tools. Specializing in creating intuitive user experiences with clean, maintainable code.",
@@ -701,7 +700,7 @@ export default function Home() {
                   "Performance optimization",
                   "Accessibility standards",
                 ],
-                color: "from-blue-500 to-cyan-500",
+                color: "from-purple-500 to-pink-500",
               },
               {
                 title: "Backend Systems",
@@ -711,7 +710,8 @@ export default function Home() {
                   "Express.js",
                   "PostgreSQL",
                   "RESTful APIs",
-                  "GraphQL",
+                  "FastAPI",
+                  "JWT Authentication"
                 ],
                 description:
                   "Robust server-side architecture and data management with scalable solutions. Building secure, high-performance APIs and database systems.",
@@ -722,7 +722,7 @@ export default function Home() {
                   "Microservices architecture",
                   "Performance tuning",
                 ],
-                color: "from-emerald-500 to-teal-500",
+                color: "from-fuchsia-500 to-purple-500",
               },
               {
                 title: "AI & Machine Learning",
@@ -743,7 +743,7 @@ export default function Home() {
                   "NLP processing",
                   "AI model optimization",
                 ],
-                color: "from-purple-500 to-pink-500",
+                color: "from-pink-500 to-fuchsia-500",
               },
               {
                 title: "DevOps & Cloud",
@@ -764,7 +764,7 @@ export default function Home() {
                   "Monitoring & logging",
                   "Security best practices",
                 ],
-                color: "from-orange-500 to-red-500",
+                color: "from-purple-700 to-slate-700",
               },
             ].map((category, index) => (
               <motion.div
@@ -776,7 +776,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <Card className="bg-slate-900/40 border-slate-600/50 transition-all duration-300 hover:border-blue-500/50 backdrop-blur-md">
+                <Card className="bg-slate-900/40 border-slate-600/50 transition-all duration-300 hover:border-purple-500/40 backdrop-blur-md">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
                       <div
@@ -788,7 +788,7 @@ export default function Home() {
                         <CardTitle className="text-2xl font-bold text-white">
                           {category.title}
                         </CardTitle>
-                        <CardDescription className="text-blue-300 font-medium">
+                        <CardDescription className="text-purple-200 font-medium">
                           {category.description}
                         </CardDescription>
                       </div>
@@ -803,7 +803,7 @@ export default function Home() {
                         {category.skills.map((skill, skillIndex) => (
                           <span
                             key={skillIndex}
-                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+                            className="px-3 py-1 bg-purple-500/15 text-purple-200 rounded-full text-sm border border-purple-500/30"
                           >
                             {skill}
                           </span>
@@ -821,7 +821,7 @@ export default function Home() {
                             key={expertiseIndex}
                             className="flex items-start space-x-3 text-gray-300"
                           >
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-purple-300 rounded-full mt-2 flex-shrink-0"></div>
                             <span>{expertise}</span>
                           </li>
                         ))}
@@ -850,7 +850,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-blue">Professional Journey</span>
+              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Professional Journey</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A track record of delivering exceptional results and driving
@@ -862,9 +862,9 @@ export default function Home() {
             {[
               {
                 company: "Cyberify",
-                position: "Full Stack Web Developer (React + Node.js)",
+                position: "Full Stack AI Engineer (React + Node.js)",
                 period: "Dec 2024 - Present",
-                location: "On-site",
+                location: "Multan, Punjab, Pakistan · On-site",
                 description:
                   "Leading the development of scalable web applications with seamless AI integrations. Specializing in React, Node.js, and PostgreSQL, while optimizing system performance and developing dynamic user interfaces. Continuously exploring new technologies to enhance user experience and business efficiency.",
                 achievements: [
@@ -884,8 +884,8 @@ export default function Home() {
               {
                 company: "BurjSoft",
                 position: "Angular Developer",
-                period: "June 2024 - August 2024",
-                location: "On-site",
+                period: "June 2024 - November 2024",
+                location: "Multan, Punjab, Pakistan · On-site",
                 description:
                   "Developed dynamic, responsive web applications with a focus on clean, maintainable code and optimized performance. Proficient in Angular, TypeScript, and integrating RESTful APIs, delivering high-quality solutions that enhance user experience and meet business needs.",
                 achievements: [
@@ -902,6 +902,26 @@ export default function Home() {
                   "Clean Code",
                 ],
               },
+              {
+                company: "Real Estate Company",
+                position: "Lead Generation Executive",
+                period: "Apr 2023 - Jun 2023",
+                location: "Multan, Punjab, Pakistan · On-site",
+                description:
+                  "Collected and organized business contact information for construction-related companies (roofing, flooring, etc.). Conducted detailed web research to extract valid email addresses and maintained structured datasets in Excel to support lead generation, marketing, and outreach. Ensured data accuracy and cleanliness for business development.",
+                achievements: [
+                  "Compiled accurate contact lists for targeted outreach",
+                  "Executed thorough web research and email validation",
+                  "Maintained clean, well-structured Excel datasets",
+                ],
+                tech: [
+                  "Lead Generation",
+                  "Email Extraction",
+                  "Data Entry",
+                  "Microsoft Excel",
+                  "Web Search",
+                ],
+              },
             ].map((job, index) => (
               <motion.div
                 key={index}
@@ -912,14 +932,14 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <Card className="bg-slate-900/40 border-slate-600/50 transition-all duration-300 hover:border-blue-500/50 backdrop-blur-md">
+                <Card className="bg-slate-900/40 border-slate-600/50 transition-all duration-300 hover:border-purple-500/40 backdrop-blur-md">
                   <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                       <div>
                         <CardTitle className="text-2xl font-bold text-white">
                           {job.company}
                         </CardTitle>
-                        <CardDescription className="text-blue-300 font-semibold text-lg">
+                        <CardDescription className="text-purple-200 font-semibold text-lg">
                           {job.position}
                         </CardDescription>
                         <div className="flex items-center space-x-4 mt-2">
@@ -948,7 +968,7 @@ export default function Home() {
                               key={achievementIndex}
                               className="flex items-start space-x-3 text-gray-300"
                             >
-                              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-1.5 h-1.5 bg-purple-300 rounded-full mt-2 flex-shrink-0"></div>
                               <span>{achievement}</span>
                             </li>
                           )
@@ -964,7 +984,7 @@ export default function Home() {
                         {job.tech.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+                            className="px-3 py-1 bg-purple-500/15 text-purple-200 rounded-full text-sm border border-purple-500/30"
                           >
                             {tech}
                           </span>
@@ -991,7 +1011,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-blue">Featured Projects</span>
+              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Featured Projects</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Showcasing innovative solutions that demonstrate technical
@@ -1001,6 +1021,32 @@ export default function Home() {
 
           <div className="space-y-8">
             {[
+              {
+                title: "RAG Insight Portal",
+                subtitle: "AI Knowledge Retrieval Platform",
+                description:
+                  "A retrieval-augmented system that delivers precise, source-backed answers across large document sets using a React and Tailwind interface powered by a FastAPI + LangChain backend.",
+                longDescription:
+                  "Built for teams who need instant access to critical knowledge. Documents are chunked, embedded, and indexed in a vector database, while LangChain orchestrates FastAPI pipelines for query understanding, retrieval, and response generation with full citations. The React dashboard gives users an elegant, real-time experience with contextual chat and document traceability.",
+                features: [
+                  "Retrieval-augmented responses with confidence scoring",
+                  "Semantic search and filtering across uploaded knowledge bases",
+                  "Document ingestion workflow with automatic chunking & embeddings",
+                  "Contextual chat UI with citation trails for every answer",
+                  "FastAPI microservices orchestrated with LangChain pipelines",
+                  "Role-based access and analytics dashboard for usage insights",
+                ],
+                tech: [
+                  "React.js",
+                  "Tailwind CSS",
+                  "FastAPI",
+                  "LangChain",
+                  "OpenAI",
+                  "Vector DB",
+                  "PostgreSQL",
+                ],
+                color: "from-purple-500 to-fuchsia-600",
+              },
               {
                 title: "AI Multimodal Chatbot",
                 subtitle: "Voice & Image Generation Assistant",
@@ -1025,7 +1071,7 @@ export default function Home() {
                   "PostgreSQL",
                   "JWT Authentication",
                 ],
-                color: "from-sky-500 to-blue-600",
+                color: "from-fuchsia-500 to-pink-500",
               },
               {
                 title: "Document based Chatbot",
@@ -1050,7 +1096,7 @@ export default function Home() {
                   "AWS",
                   "PostgreSQL",
                 ],
-                color: "from-blue-500 to-cyan-500",
+                color: "from-purple-500 to-pink-500",
               },
               {
                 title: "Business Report Generator",
@@ -1100,7 +1146,7 @@ export default function Home() {
                   "Supabase",
                   "AWS S3",
                 ],
-                color: "from-emerald-500 to-teal-500",
+                color: "from-fuchsia-500 to-purple-600",
               },
             ].map((project, index) => (
               <motion.div
@@ -1112,7 +1158,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <Card className="bg-slate-900/40 border-slate-600/50 transition-all duration-300 hover:border-blue-500/50 backdrop-blur-md">
+                <Card className="bg-slate-900/40 border-slate-600/50 transition-all duration-300 hover:border-purple-500/40 backdrop-blur-md">
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
@@ -1125,7 +1171,7 @@ export default function Home() {
                           <CardTitle className="text-2xl font-bold text-white">
                             {project.title}
                           </CardTitle>
-                          <CardDescription className="text-blue-300 font-semibold">
+                          <CardDescription className="text-purple-200 font-semibold">
                             {project.subtitle}
                           </CardDescription>
                         </div>
@@ -1147,7 +1193,7 @@ export default function Home() {
                             key={featureIndex}
                             className="flex items-start space-x-3 text-gray-300"
                           >
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-purple-300 rounded-full mt-2 flex-shrink-0"></div>
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -1162,7 +1208,7 @@ export default function Home() {
                         {project.tech.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+                            className="px-3 py-1 bg-purple-500/15 text-purple-200 rounded-full text-sm border border-purple-500/30"
                           >
                             {tech}
                           </span>
@@ -1192,7 +1238,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-gradient-blue">
+            <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
               Ready to Build the Future Together?
             </span>
           </motion.h2>
@@ -1217,7 +1263,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
+                className="group bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
               >
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=muskanzahid.pk@gmail.com&su=Project%20Inquiry&body=Hi%20Muskan%2C%20I'd%20like%20to%20discuss%20a%20project."
@@ -1234,8 +1280,8 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-2 border-blue-500/50 hover:border-blue-500 text-blue-400 hover:text-blue-300 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-500/10"
-              >
+                className="border-2 border-purple-500/50 hover:border-purple-500 text-purple-200 hover:text-purple-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 bg-transparent hover:bg-purple-500/10"
+                >
                 <a
                   href="https://github.com/Muskan-Zahid121"
                   target="_blank"
@@ -1251,11 +1297,11 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-blue-800 relative z-10">
+      <footer className="py-8 border-t border-purple-900 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.25)]">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(192,132,252,0.25)]">
                 MUSKAN ZAHID
               </h3>
               <p className="text-gray-400">Full Stack AI Engineer</p>
@@ -1265,13 +1311,13 @@ export default function Home() {
                 href="https://github.com/Muskan-Zahid121"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-purple-300 transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="mailto:muskanzahid.pk@gmail.com"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                  href="mailto:muskanzahid.pk@gmail.com"
+                  className="text-gray-400 hover:text-purple-300 transition-colors"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -1279,7 +1325,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/muskan-zahid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-purple-300 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -1289,28 +1335,28 @@ export default function Home() {
             <div className="mt-6 md:mt-0 flex items-center gap-4 text-sm text-gray-400">
               <a
                 href="#about"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-purple-300 transition-colors"
               >
                 About
               </a>
               <span className="opacity-30">•</span>
               <a
                 href="#skills"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-purple-300 transition-colors"
               >
                 Skills
               </a>
               <span className="opacity-30">•</span>
               <a
                 href="#experience"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-purple-300 transition-colors"
               >
                 Experience
               </a>
               <span className="opacity-30">•</span>
               <a
                 href="#projects"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-purple-300 transition-colors"
               >
                 Projects
               </a>
@@ -1318,12 +1364,12 @@ export default function Home() {
           </div>
 
           {/* Designer Credit */}
-          <div className="mt-6 pt-6 border-t border-blue-800/30">
+          <div className="mt-6 pt-6 border-t border-purple-900/30">
             <div className="text-center">
               <p className="text-sm text-gray-500">
                 Designed and Developed by{" "}
-                <span className="text-blue-400 font-medium">Muskan Zahid</span>{" "}
-                • AI Full Stack Engineer
+                <span className="text-purple-300 font-medium">Muskan Zahid</span>{" "}
+                • Full Stack AI Engineer
               </p>
             </div>
           </div>
