@@ -140,12 +140,12 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-4">
               {[
                 {
-                  href: "https://github.com/muskanzahid",
+                  href: "https://github.com/Muskan-Zahid121",
                   icon: Github,
                   label: "GitHub",
                 },
                 {
-                  href: "https://linkedin.com/in/muskanzahid",
+                  href: "https://www.linkedin.com/in/muskan-zahid/",
                   icon: Linkedin,
                   label: "LinkedIn",
                 },
@@ -226,17 +226,17 @@ export default function Home() {
                   <div className="flex justify-center space-x-4 pt-4 border-t border-purple-500/20">
                     {[
                       {
-                        href: "https://github.com/muskanzahid",
+                        href: "https://github.com/Muskan-Zahid121",
                         icon: Github,
                         label: "GitHub",
                       },
                       {
-                        href: "mailto:muskanzahid.pk@gmail.com",
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=muskanzahid.pk@gmail.com&su=Project%20Inquiry&body=Hi%20Muskan%2C%20I'd%20like%20to%20discuss%20a%20project."
                         icon: Mail,
                         label: "Email",
                       },
                       {
-                        href: "https://linkedin.com/in/muskanzahid",
+                        href: "https://www.linkedin.com/in/muskan-zahid/",
                         icon: Linkedin,
                         label: "LinkedIn",
                       },
@@ -1316,7 +1316,7 @@ export default function Home() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                  href="mailto:muskanzahid.pk@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=muskanzahid.pk@gmail.com&su=Project%20Inquiry&body=Hi%20Muskan%2C%20I'd%20like%20to%20discuss%20a%20project."
                   className="text-gray-400 hover:text-purple-300 transition-colors"
               >
                 <Mail className="w-6 h-6" />
