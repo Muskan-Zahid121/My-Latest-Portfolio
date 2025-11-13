@@ -14,14 +14,14 @@ export default function AnimatedBackground({
           <>
             {/* Soft radial glow */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12),transparent_60%)]" />
-              <div className="absolute -bottom-40 right-1/3 w-[40vw] h-[40vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.08),transparent_60%)]" />
+              <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.12),transparent_60%)]" />
+              <div className="absolute -bottom-40 right-1/3 w-[40vw] h-[40vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.10),transparent_60%)]" />
             </div>
             {/* Geometric shapes */}
             {Array.from({ length: 6 }).map((_, i) => (
               <motion.div
                 key={`shape-${i}`}
-                className="absolute border border-blue-400/20"
+                className="absolute border border-purple-400/20"
                 style={{
                   left: `${10 + Math.random() * 80}%`,
                   top: `${10 + Math.random() * 80}%`,
@@ -45,7 +45,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 8 }).map((_, i) => (
               <motion.div
                 key={`orbit-${i}`}
-                className="absolute w-1 h-1 bg-blue-400/40 rounded-full"
+                className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
                 style={{
                   left: `${20 + Math.random() * 60}%`,
                   top: `${20 + Math.random() * 60}%`,
@@ -68,7 +68,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 20 }).map((_, i) => (
               <motion.div
                 key={`dot-${i}`}
-                className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
+                className="absolute w-1 h-1 bg-gradient-to-r from-purple-400 to-fuchsia-400 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -113,7 +113,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 5 }).map((_, i) => (
               <motion.div
                 key={`diamond-${i}`}
-                className="absolute w-3 h-3 bg-indigo-400/25"
+                className="absolute w-3 h-3 bg-fuchsia-400/25"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -136,7 +136,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 12 }).map((_, i) => (
               <motion.div
                 key={`circle-${i}`}
-                className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"
+                className="absolute w-1 h-1 bg-purple-300/40 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -157,7 +157,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 6 }).map((_, i) => (
               <motion.div
                 key={`line-${i}`}
-                className="absolute h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"
+                className="absolute h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -179,12 +179,12 @@ export default function AnimatedBackground({
 
             {/* Hexagon pattern */}
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-blue-400/20 transform rotate-45" />
-              <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-purple-400/20 transform -rotate-45" />
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-purple-400/20 transform rotate-45" />
+              <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-fuchsia-400/20 transform -rotate-45" />
             </div>
 
             {/* Animated grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:80px_80px] opacity-20" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.02)_1px,transparent_1px)] bg-[size:80px_80px] opacity-20" />
           </>
         );
 
@@ -195,7 +195,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 6 }).map((_, i) => (
               <motion.div
                 key={`triangle-${i}`}
-                className="absolute w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-blue-400/20"
+                className="absolute w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-purple-400/20"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -217,7 +217,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 10 }).map((_, i) => (
               <motion.div
                 key={`pulse-${i}`}
-                className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"
+                className="absolute w-1 h-1 bg-purple-300/40 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -238,7 +238,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 4 }).map((_, i) => (
               <motion.div
                 key={`rotating-${i}`}
-                className="absolute w-2 h-2 bg-indigo-400/25"
+                className="absolute w-2 h-2 bg-rose-400/25"
                 style={{
                   left: `${20 + Math.random() * 60}%`,
                   top: `${20 + Math.random() * 60}%`,
@@ -264,7 +264,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 15 }).map((_, i) => (
               <motion.div
                 key={`circuit-${i}`}
-                className="absolute w-1 h-1 bg-indigo-400/30 rounded-full"
+                className="absolute w-1 h-1 bg-rose-400/30 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -284,15 +284,15 @@ export default function AnimatedBackground({
             {Array.from({ length: 4 }).map((_, i) => (
               <motion.div
                 key={`hub-${i}`}
-                className="absolute w-3 h-3 rounded-full bg-sky-400/20"
+                className="absolute w-3 h-3 rounded-full bg-purple-400/20"
                 style={{
                   left: `${10 + Math.random() * 80}%`,
                   top: `${10 + Math.random() * 80}%`,
                 }}
                 animate={{
                   boxShadow: [
-                    "0 0 0 0 rgba(56,189,248,0.25)",
-                    "0 0 0 12px rgba(56,189,248,0)",
+                    "0 0 0 0 rgba(251,191,36,0.25)",
+                    "0 0 0 12px rgba(251,191,36,0)",
                   ],
                 }}
                 transition={{
@@ -306,7 +306,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 8 }).map((_, i) => (
               <motion.div
                 key={`circuit-line-${i}`}
-                className="absolute h-0.5 bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent"
+                className="absolute h-0.5 bg-gradient-to-r from-transparent via-rose-400/30 to-transparent"
                 style={{
                   left: `${20 + Math.random() * 60}%`,
                   top: `${20 + Math.random() * 60}%`,
@@ -330,7 +330,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 12 }).map((_, i) => (
               <motion.div
                 key={`data-${i}`}
-                className="absolute w-0.5 h-0.5 bg-cyan-400/50 rounded-full"
+                className="absolute w-0.5 h-0.5 bg-purple-300/50 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -428,7 +428,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 10 }).map((_, i) => (
               <motion.div
                 key={`code-${i}`}
-                className="absolute bg-cyan-400/10 border border-cyan-400/20"
+                className="absolute bg-purple-400/10 border border-purple-400/20"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -450,7 +450,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 12 }).map((_, i) => (
               <motion.div
                 key={`rain-${i}`}
-                className="absolute w-px bg-cyan-400/15"
+                className="absolute w-px bg-purple-400/15"
                 style={{
                   left: `${Math.random() * 100}%`,
                   height: `${40 + Math.random() * 120}px`,
@@ -473,7 +473,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 16 }).map((_, i) => (
               <motion.div
                 key={`syntax-${i}`}
-                className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"
+                className="absolute w-1 h-1 bg-purple-300/40 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -494,7 +494,7 @@ export default function AnimatedBackground({
             {Array.from({ length: 6 }).map((_, i) => (
               <motion.div
                 key={`bracket-${i}`}
-                className="absolute text-cyan-400/30 text-lg font-mono"
+                className="absolute text-purple-300/30 text-lg font-mono"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -592,7 +592,7 @@ export default function AnimatedBackground({
   };
 
   return (
-    <div className="absolute inset-0 overflow-hidden z-0">
+    <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
       {getBackgroundContent()}
     </div>
   );
