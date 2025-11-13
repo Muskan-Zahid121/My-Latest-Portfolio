@@ -495,7 +495,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 relative overflow-hidden z-10">
+      <section id="about" className="py-10 relative overflow-hidden z-10">
         <AnimatedBackground variant="about" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -650,7 +650,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 relative overflow-hidden z-10">
+      <section id="skills" className="py-10 relative overflow-hidden z-10">
         <AnimatedBackground variant="skills" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -834,7 +834,7 @@ export default function Home() {
       {/* Experience Section */}
       <section
         id="experience"
-        className="py-20   relative overflow-hidden z-10"
+        className="py-10   relative overflow-hidden z-10"
       >
         <AnimatedBackground variant="experience" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -996,7 +996,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 relative overflow-hidden z-10">
+      <section id="projects" className="py-10 relative overflow-hidden z-10">
         <AnimatedBackground variant="projects" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1224,7 +1224,7 @@ export default function Home() {
       {/* Achievements Section */}
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden z-10">
+      <section className="py-10 relative overflow-hidden z-10">
         <AnimatedBackground variant="cta" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
