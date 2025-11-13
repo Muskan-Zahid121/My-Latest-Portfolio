@@ -463,6 +463,7 @@ export default function Home() {
                     "TypeScript",
                     "Tailwind CSS",
                     "AWS",
+                    "FastAPI",
                     "PostgreSQL",
                     "AI",
                     "Langchain",
