@@ -140,7 +140,7 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-4">
               {[
                 {
-                  href: "https://github.com/Muskan-Zahid121",
+                  href: "https://github.com/Muskan-Zahid121/",
                   icon: Github,
                   label: "GitHub",
                 },
@@ -226,14 +226,9 @@ export default function Home() {
                   <div className="flex justify-center space-x-4 pt-4 border-t border-purple-500/20">
                     {[
                       {
-                        href: "https://github.com/Muskan-Zahid121",
+                        href: "https://github.com/Muskan-Zahid121/",
                         icon: Github,
                         label: "GitHub",
-                      },
-                      {
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=muskanzahid.pk@gmail.com&su=Project%20Inquiry&body=Hi%20Muskan%2C%20I'd%20like%20to%20discuss%20a%20project."
-                        icon: Mail,
-                        label: "Email",
                       },
                       {
                         href: "https://www.linkedin.com/in/muskan-zahid/",
@@ -1308,7 +1303,7 @@ export default function Home() {
             </div>
             <div className="flex space-x-6">
               <a
-                href="https://github.com/Muskan-Zahid121"
+                href="https://github.com/Muskan-Zahid121/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-300 transition-colors"
