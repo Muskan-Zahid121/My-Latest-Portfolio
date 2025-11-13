@@ -499,7 +499,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20   relative overflow-hidden z-10">
+      <section id="about" className="py-20 relative overflow-hidden z-10">
         <AnimatedBackground variant="about" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
