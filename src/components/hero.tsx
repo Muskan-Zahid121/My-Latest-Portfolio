@@ -1224,7 +1224,7 @@ export default function Home() {
       {/* Achievements Section */}
 
       {/* CTA Section */}
-      <section className="py-5 relative overflow-hidden z-10">
+      <section className="py-10 relative overflow-hidden z-10">
         <AnimatedBackground variant="cta" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
