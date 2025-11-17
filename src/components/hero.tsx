@@ -402,7 +402,7 @@ export default function Home() {
               {/* Stats Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 {[
-                  { number: "1+", label: "Years Experience", icon: Award },
+                  { number: "2", label: "Years Experience", icon: Award },
                   { number: "3+", label: "Years Learning", icon: Brain },
                   { number: "15+", label: "Technologies", icon: Cpu },
                 ].map((stat, index) => (
@@ -495,7 +495,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-5 relative overflow-hidden z-10">
+      <section id="about" className="py-15 relative overflow-hidden z-10">
         <AnimatedBackground variant="about" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -650,7 +650,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-5 relative overflow-hidden z-10">
+      <section id="skills" className="py-15 relative overflow-hidden z-10">
         <AnimatedBackground variant="skills" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -834,7 +834,7 @@ export default function Home() {
       {/* Experience Section */}
       <section
         id="experience"
-        className="py-5 elative overflow-hidden z-10"
+        className="py-15 elative overflow-hidden z-10"
       >
         <AnimatedBackground variant="experience" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -996,7 +996,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-5 relative overflow-hidden z-10">
+      <section id="projects" className="py-15 relative overflow-hidden z-10">
         <AnimatedBackground variant="projects" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1224,7 +1224,7 @@ export default function Home() {
       {/* Achievements Section */}
 
       {/* CTA Section */}
-      <section className="py-10 relative overflow-hidden z-10">
+      <section className="py-20 relative overflow-hidden z-10">
         <AnimatedBackground variant="cta" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
@@ -1293,7 +1293,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-15 border-t border-purple-900 relative z-10">
+      <footer className="py-20 border-t border-purple-900 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
