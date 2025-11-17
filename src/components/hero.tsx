@@ -879,7 +879,7 @@ export default function Home() {
               },
               {
                 company: "BurjSoft",
-                position: "Angular Developer",
+                position: "Full Stack Developer",
                 period: "June 2024 - November 2024",
                 location: "Multan, Punjab, Pakistan · On-site",
                 description:
