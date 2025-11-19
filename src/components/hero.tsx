@@ -31,6 +31,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
+import { Riple } from "react-loading-indicators";
 import AnimatedBackground from "./animated";
 
 export default function Home() {
@@ -38,9 +39,15 @@ export default function Home() {
   console.log(isVisible);
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Simulate loading time
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+      setIsVisible(true);
+    }, 3000); // 3 seconds loading time
+
     const handleScroll = () => {
       const sections = ["about", "skills", "experience", "projects"];
       const scrollPosition = window.scrollY + 150; // Increased offset for better detection
@@ -61,7 +68,10 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(loadingTimer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -86,6 +96,54 @@ export default function Home() {
   console.log(y);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   console.log(opacity);
+
+  // Loading Screen Component
+  if (isLoading) {
+    console.log('Loading screen is showing');
+    return (
+      <div
+        className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#06060f] via-[#0b0f1c] to-[#06070d]"
+        style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0 }}
+      >
+        {/* Animated Background */}
+        <div className="absolute inset-0 z-0">
+          <AnimatedBackground variant="hero" />
+        </div>
+        
+        {/* Loader - Centered */}
+        <div 
+          className="absolute inset-0 z-10 flex items-center justify-center"
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            position: 'absolute',
+            top: 0,
+            left: 0
+          }}
+        >
+          <div style={{ 
+            position: 'relative', 
+            zIndex: 20,
+            width: '120px',
+            height: '120px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <Riple 
+              color="#c084fc" 
+              size="large" 
+              text="" 
+              textColor=""
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
