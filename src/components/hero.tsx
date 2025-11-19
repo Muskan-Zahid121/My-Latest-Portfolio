@@ -46,7 +46,7 @@ export default function Home() {
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
       setIsVisible(true);
-    }, 3000); // 3 seconds loading time
+    }, 1000); // 3 seconds loading time
 
     const handleScroll = () => {
       const sections = ["about", "skills", "experience", "projects"];
@@ -93,13 +93,10 @@ export default function Home() {
 
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, -100]);
-  console.log(y);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  console.log(opacity);
 
   // Loading Screen Component
   if (isLoading) {
-    console.log('Loading screen is showing');
     return (
       <div
         className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#06060f] via-[#0b0f1c] to-[#06070d]"
