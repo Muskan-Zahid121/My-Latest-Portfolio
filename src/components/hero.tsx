@@ -25,32 +25,19 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
-import { Riple } from "react-loading-indicators";
+import { motion, useScroll, AnimatePresence } from "framer-motion";
 import AnimatedBackground from "./animated";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-  console.log(isVisible);
+  // Startup loader removed — render immediately
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
-    const loadingTimer = setTimeout(() => {
-      setIsLoading(false);
-      setIsVisible(true);
-    }, 1000); // 3 seconds loading time
-
+    // Only handle scroll -> update active section
     const handleScroll = () => {
       const sections = ["about", "skills", "experience", "projects"];
-      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
+      const scrollPosition = window.scrollY + 150; // offset for detection
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -68,8 +55,9 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    // run once to sync active section on mount
+    handleScroll();
     return () => {
-      clearTimeout(loadingTimer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -91,56 +79,10 @@ export default function Home() {
     }
   };
 
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, -100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  // scrollY not required after removing transforms; keep hook if needed later
+  useScroll();
 
-  // Loading Screen Component
-  if (isLoading) {
-    return (
-      <div
-        className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#06060f] via-[#0b0f1c] to-[#06070d]"
-        style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0 }}
-      >
-        {/* Animated Background */}
-        <div className="absolute inset-0 z-0">
-          <AnimatedBackground variant="hero" />
-        </div>
-        
-        {/* Loader - Centered */}
-        <div 
-          className="absolute inset-0 z-10 flex items-center justify-center"
-          style={{ 
-            width: '100%', 
-            height: '100%', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            position: 'absolute',
-            top: 0,
-            left: 0
-          }}
-        >
-          <div style={{ 
-            position: 'relative', 
-            zIndex: 20,
-            width: '120px',
-            height: '120px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <Riple 
-              color="#c084fc" 
-              size="large" 
-              text="" 
-              textColor=""
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // Startup loader removed — render UI immediately
 
   return (
     <motion.div
@@ -332,7 +274,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-left"
+              className="text-left group"
             >
               {/* Badge */}
               {/* <motion.div
@@ -463,11 +405,11 @@ export default function Home() {
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="glass border border-slate-600/50 rounded-2xl p-6 text-center backdrop-blur-md"
+                    className="glass border border-slate-600/50 rounded-2xl p-6 text-center backdrop-blur-md shadow-lg shadow-purple-500/5 hover:shadow-purple-500/15 transition-shadow duration-300"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, borderColor: "#3b82f6" }}
+                    whileHover={{ scale: 1.05, borderColor: "#a78bfa" }}
                   >
                     <stat.icon className="w-8 h-8 text-purple-300 mx-auto mb-3" />
                     <div className="text-2xl font-bold text-purple-200">
@@ -483,7 +425,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
               >
-                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-purple-500/40 transition-colors">
+                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <Brain className="w-5 h-5 text-purple-300" />
                     <p className="text-sm text-gray-300">
@@ -491,7 +433,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-purple-500/40 transition-colors">
+                <div className="border border-slate-600/50 rounded-2xl p-4 backdrop-blur-md hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <Database className="w-5 h-5 text-pink-300" />
                     <p className="text-sm text-gray-300">
@@ -502,11 +444,11 @@ export default function Home() {
               </motion.div>
               {/* Skills Preview */}
               <motion.div
-                className="glass border border-slate-600/50 rounded-2xl p-6 w-full backdrop-blur-md"
+                className="glass border border-slate-600/50 rounded-2xl p-6 w-full backdrop-blur-md shadow-lg shadow-purple-500/5 hover:shadow-purple-500/15 transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
-                whileHover={{ scale: 1.02, borderColor: "#3b82f6" }}
+                whileHover={{ scale: 1.02, borderColor: "#a78bfa" }}
               >
                 <h3 className="text-lg font-semibold text-white mb-4">
                   Tech Stack
@@ -527,14 +469,28 @@ export default function Home() {
                     "Vector Databases",
                     "JavaScript",
                     " API",
-                  ].map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-purple-500/15 text-purple-200 rounded-full text-sm border border-purple-500/30"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  ].map((skill, index) => {
+                    const colors = [
+                      "bg-purple-500/20 text-purple-200 border-purple-500/40",
+                      "bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-500/40",
+                      "bg-pink-500/20 text-pink-200 border-pink-500/40",
+                      "bg-violet-500/20 text-violet-200 border-violet-500/40",
+                    ];
+                    const colorClass = colors[index % colors.length];
+                    return (
+                      <motion.span
+                        key={index}
+                        className={`px-3 py-1.5 ${colorClass} rounded-full text-sm font-medium border transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 cursor-default`}
+                        whileHover={{ y: -2 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.05 }}
+                        viewport={{ once: true }}
+                      >
+                        {skill}
+                      </motion.span>
+                    );
+                  })}
                 </div>
               </motion.div>
             </motion.div>
@@ -594,7 +550,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-900/40 border-purple-500/20 h-full backdrop-blur-md">
+              <Card className="bg-slate-900/40 border-purple-500/20 h-full backdrop-blur-md shadow-lg shadow-purple-500/5 hover:shadow-purple-500/15 transition-shadow duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-purple-300 flex items-center">
                     <Award className="w-6 h-6 mr-2" />
@@ -627,7 +583,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-900/40 border-fuchsia-500/20 h-full backdrop-blur-md">
+              <Card className="bg-slate-900/40 border-fuchsia-500/20 h-full backdrop-blur-md shadow-lg shadow-fuchsia-500/5 hover:shadow-fuchsia-500/15 transition-shadow duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-fuchsia-300 flex items-center">
                     <Rocket className="w-6 h-6 mr-2" />
@@ -668,7 +624,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-slate-900/40 border-purple-500/20 h-full backdrop-blur-md">
+              <Card className="bg-slate-900/40 border-purple-500/20 h-full backdrop-blur-md shadow-lg shadow-purple-500/5 hover:shadow-purple-500/15 transition-shadow duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-purple-300 flex items-center">
                     <TrendingUp className="w-6 h-6 mr-2" />
@@ -740,7 +696,7 @@ export default function Home() {
                   "Next.js",
                   "React Router",
                   "Axios / Fetch API",
-                  "Framer Motion"
+                  "Framer Motion",
                 ],
                 description:
                   "Building responsive, accessible user interfaces with modern frameworks and tools. Specializing in creating intuitive user experiences with clean, maintainable code.",
@@ -762,7 +718,7 @@ export default function Home() {
                   "PostgreSQL",
                   "RESTful APIs",
                   "FastAPI",
-                  "JWT Authentication"
+                  "JWT Authentication",
                 ],
                 description:
                   "Robust server-side architecture and data management with scalable solutions. Building secure, high-performance APIs and database systems.",
@@ -887,10 +843,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section
-        id="experience"
-        className="py-15 elative overflow-hidden z-10"
-      >
+      <section id="experience" className="py-15 elative overflow-hidden z-10">
         <AnimatedBackground variant="experience" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -901,7 +854,9 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Professional Journey</span>
+              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Professional Journey
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A track record of delivering exceptional results and driving
@@ -1062,7 +1017,9 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Featured Projects</span>
+              <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Featured Projects
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Showcasing innovative solutions that demonstrate technical
@@ -1332,7 +1289,7 @@ export default function Home() {
                 variant="outline"
                 size="lg"
                 className="border-2 border-purple-500/50 hover:border-purple-500 text-purple-200 hover:text-purple-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 bg-transparent hover:bg-purple-500/10"
-                >
+              >
                 <a
                   href="https://github.com/Muskan-Zahid121"
                   target="_blank"
@@ -1367,8 +1324,8 @@ export default function Home() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=muskanzahid.pk@gmail.com&su=Project%20Inquiry&body=Hi%20Muskan%2C%20I'd%20like%20to%20discuss%20a%20project."
-                  className="text-gray-400 hover:text-purple-300 transition-colors"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=muskanzahid.pk@gmail.com&su=Project%20Inquiry&body=Hi%20Muskan%2C%20I'd%20like%20to%20discuss%20a%20project."
+                className="text-gray-400 hover:text-purple-300 transition-colors"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -1419,7 +1376,9 @@ export default function Home() {
             <div className="text-center">
               <p className="text-sm text-gray-500">
                 Designed and Developed by{" "}
-                <span className="text-purple-300 font-medium">Muskan Zahid</span>{" "}
+                <span className="text-purple-300 font-medium">
+                  Muskan Zahid
+                </span>{" "}
                 • Full Stack AI Engineer
               </p>
             </div>

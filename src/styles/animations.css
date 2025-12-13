@@ -51,3 +51,25 @@
 :root {
   color-scheme: dark;
 }
+
+/* Scrollbar Styling */
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.145 0 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a855f7 0%, #ec4899 100%);
+  border-radius: 6px;
+  border: 2px solid oklch(0.145 0 0);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c084fc 0%, #f472b6 100%);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
