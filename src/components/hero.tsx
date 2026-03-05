@@ -444,7 +444,7 @@ export default function Home() {
               </motion.div>
               {/* Skills Preview */}
               <motion.div
-                className="glass border border-slate-600/50 rounded-2xl p-6 w-full backdrop-blur-md shadow-lg shadow-purple-500/5 hover:shadow-purple-500/15 transition-shadow duration-300"
+                className="glass border border-slate-600/50 rounded-[10px] p-6 w-full backdrop-blur-md shadow-lg shadow-purple-500/5 hover:shadow-purple-500/15 transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
