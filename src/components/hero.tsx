@@ -399,8 +399,8 @@ export default function Home() {
               {/* Stats Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 {[
-                  { number: "2", label: "Years Experience", icon: Award },
-                  { number: "3+", label: "Years Learning", icon: Brain },
+                  { number: "3", label: "Years Experience", icon: Award },
+                  { number: "4+", label: "Years Learning", icon: Brain },
                   { number: "15+", label: "Technologies", icon: Cpu },
                 ].map((stat, index) => (
                   <motion.div
