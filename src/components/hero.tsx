@@ -16,6 +16,7 @@ import {
   Menu,
   FolderOpen,
   X,
+  MapPin,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -308,20 +309,39 @@ export default function Home() {
               </motion.h1>
 
               <motion.p
+                className="text-base md:text-lg text-purple-200/90 mb-3 font-medium leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                Full Stack AI Engineer | AI Agents & RAG | React.js | Next.js |
+                Node.js | Nest.js | FastAPI | LangChain | AWS
+              </motion.p>
+
+              <motion.div
+                className="flex items-center gap-2 text-gray-400 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.75 }}
+              >
+                <MapPin className="w-4 h-4 text-purple-300" />
+                <span className="text-sm">Multan, Punjab, Pakistan</span>
+              </motion.div>
+
+              <motion.p
                 className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Crafting intelligent solutions at the intersection of web
-                development and artificial intelligence.
+                Building scalable web applications, AI-powered solutions, and
+                modern SaaS products that solve real business problems.
                 <br />
                 <motion.span
                   className="text-gray-400 font-semibold"
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  Where innovation meets execution. Where code becomes
-                  intelligence.
+                  Open to on-site, hybrid, and remote opportunities.
                 </motion.span>
               </motion.p>
               {/* Key Highlights */}
@@ -399,9 +419,9 @@ export default function Home() {
               {/* Stats Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 {[
-                  { number: "3", label: "Years Experience", icon: Award },
-                  { number: "4+", label: "Years Learning", icon: Brain },
-                  { number: "15+", label: "Technologies", icon: Cpu },
+                  { number: "2.5", label: "Years Experience", icon: Award },
+                  { number: "4", label: "Years Learning", icon: Brain },
+                  { number: "60+", label: "Technologies", icon: Cpu },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -453,44 +473,66 @@ export default function Home() {
                 <h3 className="text-lg font-semibold text-white mb-4">
                   Tech Stack
                 </h3>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "React",
-                    "Node.js",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "AWS",
-                    "FastAPI",
-                    "PostgreSQL",
-                    "AI",
-                    "Langchain",
-                    "OpenAI",
-                    "RAG Architecture",
-                    "Vector Databases",
-                    "JavaScript",
-                    " API",
-                  ].map((skill, index) => {
-                    const colors = [
-                      "bg-purple-500/20 text-purple-200 border-purple-500/40",
-                      "bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-500/40",
-                      "bg-pink-500/20 text-pink-200 border-pink-500/40",
-                      "bg-violet-500/20 text-violet-200 border-violet-500/40",
-                    ];
-                    const colorClass = colors[index % colors.length];
-                    return (
-                      <motion.span
-                        key={index}
-                        className={`px-3 py-1.5 ${colorClass} rounded-full text-sm font-medium border transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 cursor-default`}
-                        whileHover={{ y: -2 }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: index * 0.05 }}
-                        viewport={{ once: true }}
-                      >
-                        {skill}
-                      </motion.span>
-                    );
-                  })}
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-purple-300 mb-2 font-semibold">
+                      Frontend
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "React.js",
+                        "Next.js",
+                        "Angular",
+                        "TypeScript",
+                        "Tailwind CSS",
+                        "Redux",
+                        "Framer Motion",
+                      ].map((skill, index) => {
+                        const colors = [
+                          "bg-purple-500/20 text-purple-200 border-purple-500/40",
+                          "bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-500/40",
+                        ];
+                        return (
+                          <span
+                            key={index}
+                            className={`px-3 py-1.5 ${colors[index % colors.length]} rounded-full text-xs font-medium border`}
+                          >
+                            {skill}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-pink-300 mb-2 font-semibold">
+                      Backend & AI
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Node.js",
+                        "NestJS",
+                        "FastAPI",
+                        "PostgreSQL",
+                        "LangChain",
+                        "RAG",
+                        "AWS",
+                        "Docker",
+                      ].map((skill, index) => {
+                        const colors = [
+                          "bg-pink-500/20 text-pink-200 border-pink-500/40",
+                          "bg-violet-500/20 text-violet-200 border-violet-500/40",
+                        ];
+                        return (
+                          <span
+                            key={index}
+                            className={`px-3 py-1.5 ${colors[index % colors.length]} rounded-full text-xs font-medium border`}
+                          >
+                            {skill}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -534,12 +576,13 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              A passionate Full-Stack AI Engineer with expertise in building
-              scalable web applications and AI-driven features. Specializing in
-              React, Node.js, and PostgreSQL, with deep knowledge in integrating
-              AI models and optimizing system performance. Committed to creating
-              intelligent solutions that enhance user experience and drive
-              business efficiency.
+              I'm a Full-Stack AI Engineer who enjoys building scalable web
+              applications, AI-powered solutions, and modern SaaS products that
+              solve real business problems. I work across frontend and backend
+              development with React, Node.js, FastAPI, PostgreSQL, Docker, and
+              modern cloud technologies — recently focusing on AI assistants,
+              RAG, conversational AI, and workflow automation using LangChain
+              and LLMs.
             </motion.p>
           </motion.div>
 
@@ -563,14 +606,19 @@ export default function Home() {
                       Bahauddin Zakariya University
                     </h4>
                     <p className="text-purple-300 font-medium">
-                      Associate Degree of Science
+                      Bachelor of Science, Computer Science
                     </p>
-                    <p className="text-gray-400">August 2021 - February 2023</p>
+                    <p className="text-gray-400">August 2021 – July 2024</p>
+                    <p className="text-purple-200 text-sm font-medium mt-1">
+                      Grade: A
+                    </p>
                     <p className="text-gray-300 mt-2 leading-relaxed">
-                      Comprehensive foundation in Economics, Statistics, and
-                      Computer Science. Extensive hands-on experience in
-                      programming with C, C++, and VB.NET. Developed strong
-                      analytical and problem-solving skills.
+                      Completed a Bachelor of Science in Computer Science with a
+                      strong foundation in software engineering, programming,
+                      algorithms, data structures, databases, and web development.
+                      Gained practical experience in C, C++, JavaScript, React.js,
+                      Node.js, and database management through academic projects
+                      and hands-on learning.
                     </p>
                   </div>
                 </CardContent>
@@ -595,22 +643,19 @@ export default function Home() {
                     <li className="flex items-start space-x-3">
                       <Star className="w-5 h-5 text-fuchsia-300 mt-1 flex-shrink-0" />
                       <span>
-                        Creating scalable, high-performance applications that
-                        push technological boundaries
+                        AI-powered CRM Assistants & customer management systems
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="w-5 h-5 text-fuchsia-300 mt-1 flex-shrink-0" />
                       <span>
-                        Enhancing user experience through intelligent AI-driven
-                        solutions
+                        RAG-based applications, AI chatbots & virtual assistants
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="w-5 h-5 text-fuchsia-300 mt-1 flex-shrink-0" />
                       <span>
-                        Driving business efficiency with data-driven
-                        problem-solving approaches
+                        Authentication, RBAC, RESTful APIs & workflow automation
                       </span>
                     </li>
                   </ul>
@@ -636,20 +681,21 @@ export default function Home() {
                     <li className="flex items-start space-x-3">
                       <Star className="w-5 h-5 text-purple-300 mt-1 flex-shrink-0" />
                       <span>
-                        Pioneering the future of AI-integrated web applications
+                        Understanding business problems and choosing the right
+                        technology
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="w-5 h-5 text-purple-300 mt-1 flex-shrink-0" />
                       <span>
-                        Building intelligent systems that adapt and learn
+                        Building scalable solutions that create real business value
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="w-5 h-5 text-purple-300 mt-1 flex-shrink-0" />
                       <span>
-                        Empowering businesses through cutting-edge technology
-                        solutions
+                        Continuously learning System Design, Cloud, Docker, AI, and
+                        modern software development
                       </span>
                     </li>
                   </ul>
@@ -689,89 +735,162 @@ export default function Home() {
                 icon: Code,
                 skills: [
                   "React.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Material UI",
-                  "Shadcn/ui",
                   "Next.js",
-                  "React Router",
-                  "Axios / Fetch API",
+                  "Angular",
+                  "JavaScript",
+                  "TypeScript",
+                  "HTML5",
+                  "CSS3",
+                  "Tailwind CSS",
+                  "Bootstrap",
+                  "Material UI",
+                  "Shadcn/UI",
+                  "Redux",
+                  "Redux Toolkit",
+                  "Zustand",
+                  "Context API",
                   "Framer Motion",
                 ],
                 description:
-                  "Building responsive, accessible user interfaces with modern frameworks and tools. Specializing in creating intuitive user experiences with clean, maintainable code.",
+                  "Building responsive, accessible user interfaces with modern frameworks, state management, and animation libraries.",
                 expertise: [
                   "Component-based architecture",
-                  "State management",
-                  "Responsive design",
+                  "State management (Redux, Zustand, Context API)",
+                  "Responsive & accessible design",
                   "Performance optimization",
-                  "Accessibility standards",
+                  "UI/UX with Material UI & Shadcn/UI",
                 ],
                 color: "from-purple-500 to-pink-500",
               },
               {
-                title: "Backend Systems",
-                icon: Database,
+                title: "Backend Development",
+                icon: Cpu,
                 skills: [
                   "Node.js",
                   "Express.js",
-                  "PostgreSQL",
-                  "RESTful APIs",
+                  "NestJS",
+                  "Python",
                   "FastAPI",
-                  "JWT Authentication",
+                  "REST APIs",
+                  "WebSockets",
+                  "Socket.io",
+                  "Authentication",
+                  "RBAC",
+                  "JWT",
+                  "OAuth",
+                  "Webhooks",
                 ],
                 description:
-                  "Robust server-side architecture and data management with scalable solutions. Building secure, high-performance APIs and database systems.",
+                  "Robust server-side architecture with secure APIs, real-time communication, and authentication systems.",
                 expertise: [
-                  "API development",
-                  "Database design",
-                  "Authentication & authorization",
-                  "Microservices architecture",
-                  "Performance tuning",
+                  "RESTful & real-time API development",
+                  "Authentication & authorization (JWT, OAuth, RBAC)",
+                  "WebSocket & Socket.io integration",
+                  "Webhook-driven workflows",
+                  "Scalable backend services",
                 ],
                 color: "from-fuchsia-500 to-purple-500",
               },
               {
-                title: "AI & Machine Learning",
-                icon: Brain,
+                title: "Databases & Tools",
+                icon: Database,
                 skills: [
-                  "Langchain",
-                  "OpenAI",
-                  "RAG Architecture",
+                  "PostgreSQL",
+                  "MySQL",
+                  "MongoDB",
+                  "Redis",
+                  "pgvector",
+                  "Sequelize ORM",
                   "Vector Databases",
-                  "NLP",
+                  "pgAdmin",
                 ],
                 description:
-                  "Intelligent systems and natural language processing with cutting-edge AI technologies. Implementing advanced machine learning solutions.",
+                  "Relational and NoSQL database design, vector storage, caching, and ORM-based data management.",
                 expertise: [
-                  "RAG implementation",
-                  "LLM integration",
-                  "Vector embeddings",
-                  "NLP processing",
-                  "AI model optimization",
+                  "Relational & document database design",
+                  "Vector search with pgvector",
+                  "ORM-based data modeling (Sequelize)",
+                  "Caching with Redis",
+                  "Database administration & optimization",
+                ],
+                color: "from-violet-500 to-purple-500",
+              },
+              {
+                title: "AI & Generative AI",
+                icon: Brain,
+                skills: [
+                  "OpenAI APIs",
+                  "LangChain",
+                  "LangGraph",
+                  "Retrieval-Augmented Generation (RAG)",
+                  "AI Agents",
+                  "Embeddings",
+                  "Prompt Engineering",
+                  "LLM Integration",
+                  "LLM Orchestration",
+                  "Semantic Search",
+                  "Multi-Agent Workflows",
+                  "Model Evaluation",
+                ],
+                description:
+                  "Intelligent systems powered by LLMs, RAG pipelines, AI agents, and multi-agent workflow orchestration.",
+                expertise: [
+                  "RAG & semantic search implementation",
+                  "LLM integration & orchestration",
+                  "Multi-agent workflow design",
+                  "Embedding pipelines & vector search",
+                  "Prompt engineering & model evaluation",
                 ],
                 color: "from-pink-500 to-fuchsia-500",
               },
               {
-                title: "DevOps & Cloud",
+                title: "Cloud & DevOps",
                 icon: Zap,
                 skills: [
-                  "AWS (EC2, S3)",
                   "Docker",
-                  "GitHub",
+                  "Docker Compose",
+                  "Docker Hub",
+                  "AWS (EC2, Amazon S3)",
+                  "Nginx",
+                  "PM2",
+                  "Linux",
                   "CI/CD",
-                  "Monitoring",
+                  "Git",
+                  "GitHub",
+                  "Postman",
                 ],
                 description:
-                  "Scalable deployment and infrastructure management with cloud-native solutions. Ensuring reliable, secure, and efficient deployments.",
+                  "Containerized deployments, cloud infrastructure, and automated CI/CD pipelines for reliable production systems.",
                 expertise: [
-                  "Cloud infrastructure",
-                  "Container orchestration",
-                  "Automated deployments",
-                  "Monitoring & logging",
-                  "Security best practices",
+                  "Docker containerization & orchestration",
+                  "AWS cloud infrastructure (EC2, S3)",
+                  "CI/CD pipeline automation",
+                  "Process management with PM2 & Nginx",
+                  "Linux server administration",
                 ],
                 color: "from-purple-700 to-slate-700",
+              },
+              {
+                title: "Architecture & System Design",
+                icon: Rocket,
+                skills: [
+                  "Multi-Tenant SaaS Architecture",
+                  "Agentic AI Systems",
+                  "Embedding Pipelines",
+                  "Scalable Backend Architecture",
+                  "API Design",
+                  "Real-Time Applications",
+                ],
+                description:
+                  "Designing scalable, multi-tenant SaaS platforms, agentic AI systems, and real-time application architectures.",
+                expertise: [
+                  "Multi-tenant SaaS system design",
+                  "Agentic AI & embedding pipeline architecture",
+                  "Scalable backend & API design patterns",
+                  "Real-time application architecture",
+                  "Production-ready system design",
+                ],
+                color: "from-fuchsia-600 to-purple-600",
               },
             ].map((category, index) => (
               <motion.div
@@ -868,64 +987,132 @@ export default function Home() {
             {[
               {
                 company: "Cyberify",
-                position: "Full Stack AI Engineer (React + Node.js)",
-                period: "Dec 2024 - Present",
+                position: "Full Stack AI Engineer",
+                period: "Oct 2025 - Present",
                 location: "Multan, Punjab, Pakistan · On-site",
                 description:
-                  "Leading the development of scalable web applications with seamless AI integrations. Specializing in React, Node.js, and PostgreSQL, while optimizing system performance and developing dynamic user interfaces. Continuously exploring new technologies to enhance user experience and business efficiency.",
+                  "Designed and maintained AI-powered web applications with a focus on scalability and performance. Built interactive user interfaces using React.js with focused on building scalable architectures, optimizing performance and ensuring smooth API communication. Collaborated with cross-functional teams to deliver innovative, efficient, and production-ready software solutions.",
                 achievements: [
-                  "Built scalable web applications with AI integrations",
-                  "Optimized system performance by 40%",
-                  "Developed dynamic user interfaces",
-                  "Implemented continuous integration practices",
+                  "Built AI-powered web applications with scalable architecture",
+                  "Optimized system performance and API communication",
+                  "Delivered production-ready software with cross-functional teams",
+                  "Implemented RAG pipelines and modern AI integrations",
                 ],
                 tech: [
                   "React.js",
                   "Node.js",
                   "PostgreSQL",
-                  "AI Integration",
-                  "Performance Optimization",
+                  "RAG",
+                  "LangChain",
+                  "REST APIs",
                 ],
               },
               {
-                company: "BurjSoft",
+                company: "Cyberify",
+                position: "Associate Software Engineer",
+                period: "Mar 2025 - Sep 2025",
+                location: "Multan, Punjab, Pakistan · On-site",
+                description:
+                  "Designed and developed AI-powered chatbots using Retrieval-Augmented Generation (RAG) for enhanced response accuracy. Built intelligent conversational systems integrating React.js, Node.js, and PostgreSQL with document processing, embeddings, and vector search.",
+                achievements: [
+                  "Built RAG-powered chatbots with context-aware responses",
+                  "Implemented document processing and vector search pipelines",
+                  "Integrated React.js, Node.js, and PostgreSQL stack",
+                  "Optimized AI pipelines for production chatbot solutions",
+                ],
+                tech: [
+                  "React.js",
+                  "Node.js",
+                  "PostgreSQL",
+                  "RAG",
+                  "Vector Search",
+                  "REST APIs",
+                ],
+              },
+              {
+                company: "Cyberify",
+                position: "React Developer",
+                period: "Dec 2024 - Feb 2025",
+                location: "Multan, Punjab, Pakistan · On-site",
+                description:
+                  "Developed responsive, high-quality web applications by translating Figma designs into clean, reusable React components. Collaborated closely with design teams to ensure pixel-perfect interfaces and smooth user experiences across devices and browsers.",
+                achievements: [
+                  "Translated Figma designs into pixel-perfect React components",
+                  "Built responsive, reusable UI components",
+                  "Ensured cross-device and cross-browser compatibility",
+                  "Collaborated with design teams for seamless UX",
+                ],
+                tech: [
+                  "React.js",
+                  "UI Design",
+                  "Figma",
+                  "Tailwind CSS",
+                  "Responsive Design",
+                ],
+              },
+              {
+                company: "Fiverr",
+                position: "Full Stack Developer · Freelance",
+                period: "Aug 2025 - Present",
+                location: "Multan, Punjab, Pakistan · Remote",
+                description:
+                  "Working as a Freelance Full Stack & AI Developer, delivering custom web applications, AI-powered solutions, and automation systems for international clients. Specializing in React.js, Node.js, PostgreSQL, Generative AI, and workflow automation.",
+                achievements: [
+                  "Delivered full-stack apps with React.js, Next.js, Node.js, and PostgreSQL",
+                  "Built AI chatbots, RAG systems, and multi-agent workflows with LangChain",
+                  "Designed scalable REST APIs, auth systems, and RBAC",
+                  "Integrated Twilio, AWS S3, payment gateways, and external APIs",
+                  "Managed end-to-end project lifecycles for international clients",
+                ],
+                tech: [
+                  "React.js",
+                  "Next.js",
+                  "Node.js",
+                  "LangChain",
+                  "LangGraph",
+                  "AWS",
+                ],
+              },
+              {
+                company: "SE Software Technologies",
+                position: "MERN Stack Developer",
+                period: "Oct 2024 - Nov 2024",
+                location: "Multan, Punjab, Pakistan · On-site",
+                description:
+                  "Worked as a MERN Stack Developer, developing and maintaining full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Built responsive UIs, RESTful APIs, and managed database operations with authentication and authorization.",
+                achievements: [
+                  "Built full-stack apps with MongoDB, Express.js, React.js, Node.js",
+                  "Developed RESTful APIs and third-party integrations",
+                  "Implemented authentication and authorization",
+                  "Collaborated using Git and GitHub for scalable delivery",
+                ],
+                tech: [
+                  "React.js",
+                  "Node.js",
+                  "MongoDB",
+                  "Express.js",
+                  "REST APIs",
+                ],
+              },
+              {
+                company: "BurjSoft Pvt Ltd.",
                 position: "Full Stack Developer",
-                period: "June 2024 - November 2024",
+                period: "Jun 2024 - Sep 2024",
                 location: "Multan, Punjab, Pakistan · On-site",
                 description:
-                  "Developed dynamic, responsive web applications with a focus on clean, maintainable code and optimized performance. Proficient in Angular, TypeScript, and integrating RESTful APIs, delivering high-quality solutions that enhance user experience and meet business needs.",
+                  "Developed responsive and dynamic web applications using JavaScript, React, Angular, and Node.js. Built full-stack solutions that enhance scalability, performance, and user experience within agile teams.",
                 achievements: [
-                  "Developed responsive web applications",
-                  "Implemented clean, maintainable code practices",
-                  "Integrated RESTful APIs",
-                  "Achieved 99.9% uptime for critical applications",
+                  "Built dynamic web apps with React, Angular, and Node.js",
+                  "Delivered scalable full-stack solutions in agile teams",
+                  "Implemented innovative features for performance and UX",
+                  "Collaborated on design, development, and deployment",
                 ],
                 tech: [
+                  "React.js",
                   "Angular",
-                  "TypeScript",
-                  "RESTful APIs",
-                  "Performance Optimization",
-                  "Clean Code",
-                ],
-              },
-              {
-                company: "Real Estate Company",
-                position: "Lead Generation Executive",
-                period: "Apr 2023 - Jun 2023",
-                location: "Multan, Punjab, Pakistan · On-site",
-                description:
-                  "Collected and organized business contact information for construction-related companies (roofing, flooring, etc.). Conducted detailed web research to extract valid email addresses and maintained structured datasets in Excel to support lead generation, marketing, and outreach. Ensured data accuracy and cleanliness for business development.",
-                achievements: [
-                  "Compiled accurate contact lists for targeted outreach",
-                  "Executed thorough web research and email validation",
-                  "Maintained clean, well-structured Excel datasets",
-                ],
-                tech: [
-                  "Lead Generation",
-                  "Email Extraction",
-                  "Data Entry",
-                  "Microsoft Excel",
-                  "Web Search",
+                  "Node.js",
+                  "JavaScript",
+                  "REST APIs",
                 ],
               },
             ].map((job, index) => (
@@ -1030,131 +1217,131 @@ export default function Home() {
           <div className="space-y-8">
             {[
               {
-                title: "RAG Insight Portal",
-                subtitle: "AI Knowledge Retrieval Platform",
+                title: "AI-Powered Sales CRM",
+                subtitle: "Intelligent Workflow Automation · Cyberify",
                 description:
-                  "A retrieval-augmented system that delivers precise, source-backed answers across large document sets using a React and Tailwind interface powered by a FastAPI + LangChain backend.",
+                  "A modern CRM platform that integrates AI to understand natural language, automate repetitive tasks, and provide intelligent assistance for daily sales operations — managing customers, leads, conversations, and business workflows from a single system.",
                 longDescription:
-                  "Built for teams who need instant access to critical knowledge. Documents are chunked, embedded, and indexed in a vector database, while LangChain orchestrates FastAPI pipelines for query understanding, retrieval, and response generation with full citations. The React dashboard gives users an elegant, real-time experience with contextual chat and document traceability.",
+                  "Features an AI assistant that executes CRM actions via natural language, plus RAG-based document retrieval for context-aware answers. Built with React.js, FastAPI, Node.js, PostgreSQL with PGVector, LangChain, LangGraph, and AWS.",
                 features: [
-                  "Retrieval-augmented responses with confidence scoring",
-                  "Semantic search and filtering across uploaded knowledge bases",
-                  "Document ingestion workflow with automatic chunking & embeddings",
-                  "Contextual chat UI with citation trails for every answer",
-                  "FastAPI microservices orchestrated with LangChain pipelines",
-                  "Role-based access and analytics dashboard for usage insights",
+                  "Natural language AI assistant for CRM actions (CRUD operations)",
+                  "RAG-based document retrieval for context-aware answers",
+                  "Sales pipeline, follow-ups, and workflow automation",
+                  "PostgreSQL with PGVector for structured and vector data",
+                  "LangChain & LangGraph for AI orchestration",
+                  "Enterprise-scale architecture on AWS",
                 ],
                 tech: [
                   "React.js",
-                  "Tailwind CSS",
                   "FastAPI",
-                  "LangChain",
-                  "OpenAI",
-                  "Vector DB",
+                  "Node.js",
                   "PostgreSQL",
+                  "PGVector",
+                  "LangChain",
+                  "LangGraph",
+                  "AWS",
                 ],
                 color: "from-purple-500 to-fuchsia-600",
               },
               {
-                title: "AI Multimodal Chatbot",
-                subtitle: "Voice & Image Generation Assistant",
+                title: "Cognify AI",
+                subtitle: "RAG Document Chatbot · Cyberify",
                 description:
-                  "A cutting-edge multimodal AI chatbot combining text, voice, and image capabilities for dynamic, context-aware conversations.",
+                  "An intelligent document-based chatbot that enables users to upload files and interact conversationally with their content using LangChain agents for precise, context-aware answers sourced directly from uploaded documents.",
                 longDescription:
-                  "Users can generate images from prompts, receive real-time streamed answers, and converse naturally through an integrated voice agent — all within a secure, authenticated experience.",
+                  "Built using React, Node.js, and PostgreSQL with RAG architecture for research, customer support, and knowledge management use cases.",
                 features: [
-                  "Real-time streamed responses",
-                  "AI-powered image generation",
-                  "Integrated two-way voice agent",
-                  "Secure auth and session management",
-                  "Context-aware intelligent responses",
-                  "Scalable, database-driven control",
+                  "Upload and chat with documents conversationally",
+                  "LangChain agents for Retrieval-Augmented Generation",
+                  "Context-aware answers from uploaded content",
+                  "Document processing and vector search",
+                  "Research, support, and knowledge management ready",
+                  "Secure file handling and user sessions",
                 ],
                 tech: [
                   "React.js",
                   "Node.js",
-                  "LangGraph",
-                  "OpenAI",
-                  "pgAdmin",
                   "PostgreSQL",
-                  "JWT Authentication",
+                  "LangChain",
+                  "RAG",
+                  "OpenAI",
                 ],
                 color: "from-fuchsia-500 to-pink-500",
               },
               {
-                title: "Document based Chatbot",
-                subtitle: "RAG-based Real Estate Assistant",
+                title: "Instagram Chat",
+                subtitle: "Real-time Messaging App · Cyberify",
                 description:
-                  "A sophisticated Retrieval-Augmented Generation (RAG) chatbot designed for property query automation. Enables real estate owners to automatically answer user queries with intelligent, context-aware responses.",
+                  "A real-time chat application inspired by Instagram's messaging feature using Next.js, Node.js, and Socket.io for instant, bidirectional communication with a smooth, responsive chat experience.",
                 longDescription:
-                  "This AI-powered chatbot revolutionizes the real estate industry by providing instant, accurate responses to property inquiries. Built with advanced RAG architecture, it processes natural language queries and retrieves relevant property information from a comprehensive database. The system features intelligent context awareness, multi-language support, and seamless integration with existing real estate platforms.",
+                  "Explores real-time communication patterns and scalable web architecture while delivering private messaging with modern UI/UX.",
                 features: [
-                  "Intelligent query processing",
-                  "Context-aware responses",
-                  "Real-time property data",
-                  "Multi-language support",
-                  "Advanced RAG architecture",
-                  "Seamless API integration",
+                  "Real-time message delivery with Socket.io",
+                  "Next.js dynamic frontend with responsive UI",
+                  "Instant connect and bidirectional communication",
+                  "Secure data handling and session management",
+                  "Smooth performance across devices",
+                  "Scalable Node.js backend architecture",
                 ],
                 tech: [
-                  "React.js",
+                  "Next.js",
                   "Node.js",
-                  "LangChain",
-                  "OpenAI",
-                  "AWS",
+                  "Socket.io",
+                  "React.js",
+                  "WebSockets",
+                  "JavaScript",
+                ],
+                color: "from-purple-500 to-pink-500",
+              },
+              {
+                title: "Real-time Chat App",
+                subtitle: "Group & Private Messaging · Cyberify",
+                description:
+                  "A real-time chat application for seamless communication and instant message delivery. Built with Next.js for the frontend and Node.js with Socket.io for bidirectional communication without page reloads.",
+                longDescription:
+                  "Supports both private and group conversations with secure data handling and a responsive UI optimized for performance.",
+                features: [
+                  "Private and group conversation support",
+                  "Real-time bidirectional messaging",
+                  "No page reloads — instant delivery",
+                  "Secure data handling and auth",
+                  "Responsive UI for all screen sizes",
+                  "Node.js + Socket.io backend",
+                ],
+                tech: [
+                  "Next.js",
+                  "Node.js",
+                  "Socket.io",
+                  "React.js",
+                  "WebSockets",
                   "PostgreSQL",
                 ],
-                color: "from-purple-500 to-pink-500",
+                color: "from-fuchsia-500 to-purple-600",
               },
               {
-                title: "Business Report Generator",
-                subtitle: "AI Analysis Report Generator",
+                title: "Personal Portfolio Website",
+                subtitle: "Full-Stack Developer Showcase",
                 description:
-                  "An advanced AI-powered analysis report generator designed to identify and evaluate business-related problems. Delivers comprehensive reports with in-depth insights for informed decision-making.",
+                  "A personal portfolio website showcasing skills, projects, and professional experience in a clean, modern layout — featuring project case studies, a dedicated skills section, and ways to connect.",
                 longDescription:
-                  "Quantra AI transforms raw business data into actionable intelligence through advanced machine learning algorithms. The system analyzes complex datasets, identifies patterns, and generates detailed reports with predictive insights. Features include automated data processing, customizable report templates, and real-time dashboard visualizations for stakeholders.",
+                  "Built with React, Node.js, and PostgreSQL, reflecting expertise in full-stack development, UI/UX creativity, and problem-solving as a digital identity and professional presence.",
                 features: [
-                  "Automated report generation",
-                  "Business intelligence insights",
-                  "Data visualization",
-                  "Predictive analytics",
-                  "Custom report templates",
-                  "Real-time dashboards",
+                  "Clean, modern responsive layout",
+                  "Detailed project case studies",
+                  "Dedicated skills and experience sections",
+                  "Animated UI with Framer Motion",
+                  "Contact and social integration",
+                  "Showcases full-stack development expertise",
                 ],
                 tech: [
                   "React.js",
-                  "Node.js",
-                  "LangChain agents and tools",
-                  "OpenAI",
-                  "AWS",
-                  "Chart.js",
+                  "Tailwind CSS",
+                  "Framer Motion",
+                  "TypeScript",
+                  "Vite",
+                  "GitHub",
                 ],
-                color: "from-purple-500 to-pink-500",
-              },
-              {
-                title: "AutoDoc AI When (no code automation)",
-                subtitle: "RAG-Based Document Automation System",
-                description:
-                  "A comprehensive automation solution built using n8n with Retrieval-Augmented Generation (RAG) architecture. Integrates vector databases, embeddings, OpenAI chat models, and intelligent agents.",
-                longDescription:
-                  "AutoDoc AI streamlines document processing workflows through intelligent automation and AI-powered analysis. The system handles document classification, data extraction, and automated responses using advanced NLP techniques. Built with n8n for workflow orchestration and integrated with vector databases for efficient document retrieval and processing.",
-                features: [
-                  "Document processing automation",
-                  "Intelligent data extraction",
-                  "Workflow optimization",
-                  "Secure document handling",
-                  "NLP-powered analysis",
-                  "Multi-format support",
-                ],
-                tech: [
-                  "n8n",
-                  "OpenAI",
-                  "LangChain Agents",
-                  "Vector DB",
-                  "Supabase",
-                  "AWS S3",
-                ],
-                color: "from-fuchsia-500 to-purple-600",
+                color: "from-purple-500 to-fuchsia-500",
               },
             ].map((project, index) => (
               <motion.div
@@ -1312,7 +1499,9 @@ export default function Home() {
               <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(192,132,252,0.25)]">
                 MUSKAN ZAHID
               </h3>
-              <p className="text-gray-400">Full Stack AI Engineer</p>
+              <p className="text-gray-400">
+                Full Stack AI Engineer | AI Agents & RAG
+              </p>
             </div>
             <div className="flex space-x-6">
               <a
