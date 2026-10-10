@@ -40,9 +40,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-burgundy: #800020;
-  --color-burgundy-light: #e05c7a;
-  --color-burgundy-soft: #a4133c;
+  --color-burgundy: #171717;
+  --color-burgundy-light: #f5f5f5;
+  --color-burgundy-soft: #404040;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -55,18 +55,18 @@
   --card-foreground: #ffffff;
   --popover: #000000;
   --popover-foreground: #ffffff;
-  --primary: #800020;
-  --primary-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
   --secondary: #000000;
   --secondary-foreground: #ffffff;
   --muted: #000000;
   --muted-foreground: #ffffff;
-  --accent: #800020;
+  --accent: #262626;
   --accent-foreground: #ffffff;
-  --destructive: #800020;
+  --destructive: #404040;
   --border: rgb(255 255 255 / 18%);
   --input: rgb(255 255 255 / 18%);
-  --ring: #800020;
+  --ring: #d4d4d4;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -89,18 +89,18 @@
   --card-foreground: #ffffff;
   --popover: #000000;
   --popover-foreground: #ffffff;
-  --primary: #800020;
-  --primary-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
   --secondary: #000000;
   --secondary-foreground: #ffffff;
   --muted: #000000;
   --muted-foreground: #ffffff;
-  --accent: #800020;
+  --accent: #262626;
   --accent-foreground: #ffffff;
-  --destructive: #800020;
+  --destructive: #404040;
   --border: rgb(255 255 255 / 18%);
   --input: rgb(255 255 255 / 18%);
-  --ring: #800020;
+  --ring: #d4d4d4;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -128,22 +128,42 @@
     @apply font-sans antialiased;
   }
   ::selection {
-    background: #a4133c;
+    background: #601d49;
     color: #ffffff;
   }
 }
 
 @layer utilities {
-  .text-gradient-rose {
-    background-image: linear-gradient(115deg, #ff8fa8 0%, #e05c7a 45%, #a4133c 100%);
+  .text-gradient-silver {
+    background-image: linear-gradient(115deg, #ffffff 0%, #d4d4d4 45%, #8a8a8a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  .text-animated-gradient {
+    background-image: linear-gradient(
+      100deg,
+      #ffffff 0%,
+      #f2dbe6 18%,
+      #c06a93 38%,
+      #601d49 52%,
+      #c06a93 66%,
+      #f2dbe6 84%,
+      #ffffff 100%
+    );
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 8s linear infinite;
+    filter: drop-shadow(0 6px 26px rgba(96, 29, 73, 0.55));
+  }
   .card-surface {
+    position: relative;
+    overflow: hidden;
     border-radius: 1rem;
-    border: 1px solid rgb(255 255 255 / 0.14);
-    background-color: rgb(18 9 13 / 0.34);
+    border: 1px solid rgb(96 29 73 / 0.45);
+    background-color: rgb(255 255 255 / 0.04);
     background-image: linear-gradient(
       150deg,
       rgb(255 255 255 / 0.1) 0%,
@@ -154,21 +174,22 @@
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     box-shadow:
       inset 0 1px 0 0 rgb(255 255 255 / 0.1),
-      0 10px 40px -20px rgb(0 0 0 / 0.75);
+      0 12px 40px -18px rgb(96 29 73 / 0.7);
     transition: border-color 0.3s ease, box-shadow 0.3s ease,
       background-color 0.3s ease, transform 0.3s ease;
   }
   .card-surface:hover {
-    border-color: rgb(224 92 122 / 0.45);
-    background-color: rgb(34 14 22 / 0.38);
+    transform: translateY(-4px);
+    border-color: rgb(192 106 147 / 0.6);
+    background-color: rgb(255 255 255 / 0.07);
     box-shadow:
       inset 0 1px 0 0 rgb(255 255 255 / 0.14),
-      0 0 50px -12px rgb(164 19 60 / 0.35);
+      0 0 50px -12px rgb(139 42 102 / 0.55);
   }
   .chip {
     border-radius: 9999px;
-    border: 1px solid rgb(255 255 255 / 0.12);
-    background: rgb(255 255 255 / 0.05);
+    border: 1px solid rgb(96 29 73 / 0.5);
+    background: rgb(96 29 73 / 0.14);
     padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
     line-height: 1.4;
@@ -176,7 +197,8 @@
     transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
   }
   .chip:hover {
-    border-color: rgb(224 92 122 / 0.5);
-    color: #e05c7a;
+    border-color: rgb(192 106 147 / 0.75);
+    background: rgb(96 29 73 / 0.32);
+    color: #ffffff;
   }
 }
